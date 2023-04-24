@@ -1,0 +1,56 @@
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+
+local Window = OrionLib:MakeWindow({Name = "Fantic Clan", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest"})
+
+local Tab = Window:MakeTab({
+	Name = "click them",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+Tab:AddButton({
+	Name = "Start",
+	Callback = function()
+      		getgenv().farm = true
+
+while farm do task.wait()
+game:GetService("ReplicatedStorage").Events.Dialogue:FireServer({
+        ["Type"] = "End",
+        ["Npc"] = workspace.Npcs.Mita,
+        ["Path"] = "Accept"
+    })
+game:GetService("ReplicatedStorage").Events.Dialogue:FireServer({
+        ["Type"] = "End",
+        ["Npc"] = workspace.Npcs:FindFirstChild("Saru Kenshi"),
+        ["Path"] = "SetSpawn"
+    })
+end
+  	end    
+})
+
+Tab:AddButton({
+	Name = "Stop",
+	Callback = function()
+      		getgenv().farm = false
+
+while farm do task.wait()
+game:GetService("ReplicatedStorage").Events.Dialogue:FireServer({
+        ["Type"] = "End",
+        ["Npc"] = workspace.Npcs.Mita,
+        ["Path"] = "Accept"
+    })
+game:GetService("ReplicatedStorage").Events.Dialogue:FireServer({
+        ["Type"] = "End",
+        ["Npc"] = workspace.Npcs:FindFirstChild("Saru Kenshi"),
+        ["Path"] = "SetSpawn"
+    })
+end
+  	end    
+})
+
+OrionLib:MakeNotification({
+	Name = "Attention Nigger",
+	Content = "Get 50$ first, do the chatting and stuff then execute ok",
+	Image = "rbxassetid://4483345998",
+	Time = 5
+})
